@@ -5,12 +5,12 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * Unit test for Virtual Keys App.
  */
-public class AppTest 
+public class VKeysTest 
 {
     /**
-     * Rigorous Test :-)
+     * Rigorous Testing
      */
     @Test
     public void shouldAnswerWithTrue()

@@ -1,10 +1,10 @@
 package VKeys;
 
 /**
- * Hello world!
+ * Vkeys Main Workbench
  *
  */
-public class App 
+public class VKeysMain 
 {
     public static void main( String[] args )
     {

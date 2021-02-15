@@ -6,7 +6,7 @@
 
   <groupId>com.VirtualKeysApp</groupId>
   <artifactId>VirtualKeys</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.1-SNAPSHOT</version>
 
   <name>VirtualKeys</name>
   <!-- FIXME change it to the project's website -->
