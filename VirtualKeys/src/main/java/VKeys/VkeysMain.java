@@ -19,4 +19,3 @@ public class VKeysMain {
         // TODO: Code should not be very long here.
         System.out.println("Hello World!");
     }
-}
