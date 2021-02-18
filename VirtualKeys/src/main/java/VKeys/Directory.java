@@ -21,10 +21,6 @@ public class Directory {
 
     }
 
-    public Directory(String path, String name) {
-
-    }
-
     public HashMap<File, File[]> getFiles() {
         return files;
     }
