@@ -15,6 +15,8 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         Directory dir = new Directory(new File(PATH));
         int option = input.nextInt();
+        System.out.println(
+                "1- Display Current Directory\n2- Show All Files\n3- Add a File\n4- Delete a File\n5- Delete All Files\n6- Search for a File\n7- Exit LockedMe\n");
         switch (option) {
             case 1: // display current directory
                 System.out.println("Your Current Directory: " + dir.getPath());
