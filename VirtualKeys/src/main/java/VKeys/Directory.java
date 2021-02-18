@@ -6,11 +6,21 @@ import java.util.HashMap;
 
 public class Directory {
 
-    HashMap<File, ArrayList<File>> files = new HashMap<File, ArrayList<File>>();
+    HashMap<File, File[]> files = new HashMap<File, File[]>();
     String path;
     String name;
 
-    public Directory() {
+    public Directory(File dir) {
+        if (dir.isDirectory()) {
+            files.put(dir, dir.listFiles());
+        } else {
+            System.out.println("This is not a Directory! Not adding to ");
+        }
+
+    }
+
+    public Directory(String path, String name) {
+
     }
 
     public HashMap<File, ArrayList<File>> getFiles() {
@@ -37,11 +47,11 @@ public class Directory {
         this.name = name;
     }
 
-    public void addFile() {
+    public void addFile(String name) {
         // Adds a file to the current directory
     }
 
-    public void deleteFile() {
+    public void deleteFile(String name) {
         // deletes file from the current directory
     }
 
@@ -49,12 +59,16 @@ public class Directory {
         // Changes to another directory that is in its HashMap
     }
 
+    public void currentDir() {
+        // returns the currnet directory and some info
+    }
+
     public void searchFile() {
         // searches through all of the directories in current directory and returns the
         // file if its found else returns FileNotFound
     }
 
-    public String fileTreeStruct() {
+    public String dirTreeStruct() {
         // should throw command into cmd/terminal that will call the tree function to
         // produce what files and directories are below it
         return "tree";
