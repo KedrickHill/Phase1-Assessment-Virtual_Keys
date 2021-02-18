@@ -13,6 +13,8 @@ public class Directory {
     public Directory(File dir) {
         if (dir.isDirectory()) {
             files.put(dir, dir.listFiles());
+            setPath(dir.getPath());
+            setName(dir.getName());
         } else {
             System.out.println("This is not a Directory! Not adding to ");
         }
@@ -23,11 +25,11 @@ public class Directory {
 
     }
 
-    public HashMap<File, ArrayList<File>> getFiles() {
+    public HashMap<File, File[]> getFiles() {
         return files;
     }
 
-    public void setFiles(HashMap<File, ArrayList<File>> files) {
+    public void setFiles(HashMap<File, File[]> files) {
         this.files = files;
     }
 
