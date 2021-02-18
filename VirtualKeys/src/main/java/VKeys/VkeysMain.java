@@ -18,5 +18,4 @@ public class VkeysMain {
         // TODO: each menu should be unavailble and should then allow the user to return
         // to the menu
         // TODO: Code should not be very long here.
-        System.out.println("Hello World!");
     }

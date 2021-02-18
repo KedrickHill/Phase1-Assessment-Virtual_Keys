@@ -13,23 +13,37 @@ public class Menu {
         // TODO: using a switch to change the case would work here (Check with previous
         // assignemnt: Bug Fixes)
         Scanner input = new Scanner(System.in);
-        Directory dir = new Directory(PATH);
+        Directory dir = new Directory(new File(PATH));
         int option = input.nextInt();
         switch (option) {
             case 1: // display current directory
-                System.out.println("Your Current Directory: " + dir.getAbsolutePath());
+                System.out.println("Your Current Directory: " + dir.getPath());
                 menu();
-            case 2: // add a file to the directory
+                break;
+            case 2: // show all files in directory
+                System.out.println(dir.getFiles());
+                menu();
+                break;
+            case 3: // add a file to the directory
                 System.out.println("Enter the files name and type:");
                 dir.addFile(input.nextLine());
-            case 3: // delete a file from directory
+                menu();
+                break;
+            case 4: // delete a file from directory
                 System.out.println("Enter a file to be deleted:");
                 dir.deleteFile(input.nextLine());
-            case 4: // delete all files from directory?
-            case 5: // search the directory for a file
+                menu();
+                break;
+            case 5: // delete all files from directory?
+                break;
+            case 6: // search the directory for a file
                 System.out.println("Enter a file to search:");
-            case 6: // exit the application
+                menu();
+                break;
+            case 7: // exit the application
+                break;
 
         }
+        input.close();
     }
 }
