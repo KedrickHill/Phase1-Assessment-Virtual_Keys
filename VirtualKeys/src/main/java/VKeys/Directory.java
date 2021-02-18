@@ -1,18 +1,21 @@
 package VKeys;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Directory {
 
     HashMap<File, File[]> files = new HashMap<File, File[]>();
+    File dir;
     String path;
     String name;
 
     public Directory(File dir) {
         if (dir.isDirectory()) {
             files.put(dir, dir.listFiles());
-            setPath(dir.getPath());
+            setDir(dir);
+            setPath(dir.getAbsolutePath());
             setName(dir.getName());
         } else {
             System.out.println("This is not a Directory! Not adding to ");
@@ -20,20 +23,28 @@ public class Directory {
 
     }
 
-    public HashMap<File, File[]> getFiles() {
-        return files;
+    public File[] getFiles() {
+        return files.get(getDir()); // displays address since its an array
     }
 
     public void setFiles(HashMap<File, File[]> files) {
-        this.files = files;
+        this.files = files; // this may be wack too
+    }
+
+    public File getDir() {
+        return dir;
+    }
+
+    public void setDir(File dir) {
+        this.dir = dir;
     }
 
     public String getPath() {
-        return path;
+        return path; // works
     }
 
     public void setPath(String path) {
-        this.path = path;
+        this.path = path; // works
     }
 
     public String getName() {
@@ -54,10 +65,6 @@ public class Directory {
 
     public void changeDir() {
         // Changes to another directory that is in its HashMap
-    }
-
-    public void currentDir() {
-        // returns the currnet directory and some info
     }
 
     public void searchFile() {

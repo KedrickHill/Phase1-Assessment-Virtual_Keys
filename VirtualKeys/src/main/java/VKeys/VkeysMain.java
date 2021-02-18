@@ -1,7 +1,5 @@
 package VKeys;
 
-import java.util.Scanner;
-
 /**
  * Vkeys Main Workbench
  *

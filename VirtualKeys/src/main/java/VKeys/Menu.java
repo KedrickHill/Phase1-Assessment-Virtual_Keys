@@ -17,33 +17,29 @@ public class Menu {
         System.out.println(
                 "1- Display Current Directory\n2- Show All Files\n3- Add a File\n4- Delete a File\n5- Delete All Files\n6- Search for a File\n7- Exit LockedMe\n");
 
+        System.out.println("Enter a Choice:");
         int option = input.nextInt();
         switch (option) {
             case 1: // display current directory
-                System.out.println("Your Current Directory: " + dir.getPath());
+                System.out.println("Your Current Directory: " + dir.getDir());
                 menu();
-                break;
             case 2: // show all files in directory
                 System.out.println(dir.getFiles());
                 menu();
-                break;
             case 3: // add a file to the directory
                 System.out.println("Enter the files name and type:");
                 dir.addFile(input.nextLine());
                 menu();
-                break;
             case 4: // delete a file from directory
                 System.out.println("Enter a file to be deleted:");
                 dir.deleteFile(input.nextLine());
                 menu();
-                break;
             case 5: // delete all files from directory?
                 break;
             case 6: // search the directory for a file
                 System.out.println("Enter a file to search:");
                 menu();
-                break;
-            case 7: // exit the application
+            default: // exit the application
                 break;
 
         }
