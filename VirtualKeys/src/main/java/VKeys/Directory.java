@@ -1,7 +1,6 @@
 package VKeys;
 
 import java.io.File;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class Directory {
