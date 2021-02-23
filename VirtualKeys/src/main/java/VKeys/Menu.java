@@ -23,24 +23,33 @@ public class Menu {
             case 1: // display current directory
                 System.out.println("Your Current Directory: " + dir.getDir());
                 menu();
+
             case 2: // show all files in directory
                 System.out.println(dir.getFiles());
                 menu();
+
             case 3: // add a file to the directory
                 System.out.println("Enter the files name and type:");
                 dir.addFile(input.nextLine());
                 menu();
+
             case 4: // delete a file from directory
                 System.out.println("Enter a file to be deleted:");
                 dir.deleteFile(input.nextLine());
                 menu();
+
             case 5: // delete all files from directory?
                 break;
+
             case 6: // search the directory for a file
                 System.out.println("Enter a file to search:");
                 menu();
-            default: // exit the application
+                
+            case 7: //exit the application
                 System.out.println("Closing Application...");
+                break;
+            default: // asks for
+                System.out.println("Invalid choice! Closing Application...");
                 break;
 
         }

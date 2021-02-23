@@ -32,6 +32,7 @@ public class VKeysTest {
         assertTrue(files.equals(correctFiles));
     }
 
+
     @Test
     public void AddFileTest() {
         System.out.println("\nADDING A FILE TEST...");
@@ -43,7 +44,9 @@ public class VKeysTest {
         System.out.println("Recieved:");
         System.out.println(f);
         assertTrue(f.contains(temp));
+        
     }
+
 
     @Test
     public void searchFileTest() {
@@ -56,10 +59,12 @@ public class VKeysTest {
 
         assertTrue(srch.equals(dir.searchFile(srch).getName()));
 
+        dir.deleteFile("temp.txt");
         srch = "temp.docx";
 
         assertNull(dir.searchFile(srch));
     }
+
 
     @Test
     public void deleteFileTest() {
@@ -91,9 +96,5 @@ public class VKeysTest {
         assertFalse(f.contains(t1));
         assertFalse(f.contains(t2));
         assertFalse(f.contains(t3));
-
-
-
-
     }
 }
