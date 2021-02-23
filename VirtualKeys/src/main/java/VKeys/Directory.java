@@ -73,6 +73,14 @@ public class Directory {
 
     public void deleteFile(String name) {
         // deletes file from the current directory
+
+        for (File file : files) {
+            if(file.getName().equals(name)) {
+                file.delete();
+                break;
+            }
+        }
+        updateFiles();
     }
 
     public File searchFile(String name) {

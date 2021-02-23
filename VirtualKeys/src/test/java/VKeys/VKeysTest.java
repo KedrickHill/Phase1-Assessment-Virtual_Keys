@@ -26,6 +26,7 @@ public class VKeysTest {
 
     @Test
     public void getFilesTest() {
+        System.out.println("\nGETTING FILES TEST...");
         List<File> files = dir.getFiles();
         Collections.sort(correctFiles);
         assertTrue(files.equals(correctFiles));
@@ -33,11 +34,11 @@ public class VKeysTest {
 
     @Test
     public void AddFileTest() {
+        System.out.println("\nADDING A FILE TEST...");
         File temp = new File(dir.getPath() + "/temp.txt"); // used for comparison
         System.out.println(temp);
 
         dir.addFile("temp.txt");
-        dir.updateFiles();
         List<File> f = dir.getFiles();
         System.out.println("Recieved:");
         System.out.println(f);
@@ -46,7 +47,7 @@ public class VKeysTest {
 
     @Test
     public void searchFileTest() {
-
+        System.out.println("\nSEARCHING FOR A FILE TEST...");
         String srch = "temp.txt";
 
         System.out.println(dir.searchFile(srch));
@@ -62,13 +63,37 @@ public class VKeysTest {
 
     @Test
     public void deleteFileTest() {
+        System.out.println("\nDELETING A FILE(S) TEST...");
+        
+        // used as temp files that are deleted later
+        File t1 = new File(dir.getPath() + "/" + "temp.xlsx");
+        File t2 = new File(dir.getPath() + "/" + "deleteMe.docx");
+        File t3 = new File(dir.getPath() + "/" + "Virus.txt");
+
         dir.addFile("temp.xlsx");
         dir.addFile("deleteMe.docx");
         dir.addFile("Virus.txt");
 
-        dir.updateFiles();
         List<File> f = dir.getFiles();
-        
-        // assertFalse(f.contains(o));
+        System.out.println("List of current paths in directory:\n" + f);
+
+        assertTrue(f.contains(t1));
+        assertTrue(f.contains(t2));
+        assertTrue(f.contains(t3));
+
+        dir.deleteFile("temp.xlsx");
+        dir.deleteFile("deleteMe.docx");
+        dir.deleteFile("Virus.txt");
+
+        f = dir.getFiles();
+        System.out.println("List of files after deletion in directory:\n" + f);
+
+        assertFalse(f.contains(t1));
+        assertFalse(f.contains(t2));
+        assertFalse(f.contains(t3));
+
+
+
+
     }
 }
