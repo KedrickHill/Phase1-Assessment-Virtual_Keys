@@ -1,5 +1,7 @@
 package VKeys;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -33,12 +35,40 @@ public class VKeysTest {
     public void AddFileTest() {
         File temp = new File(dir.getPath() + "/temp.txt"); // used for comparison
         System.out.println(temp);
-        
+
         dir.addFile("temp.txt");
         dir.updateFiles();
         List<File> f = dir.getFiles();
         System.out.println("Recieved:");
         System.out.println(f);
         assertTrue(f.contains(temp));
+    }
+
+    @Test
+    public void searchFileTest() {
+
+        String srch = "temp.txt";
+
+        System.out.println(dir.searchFile(srch));
+        System.out.println(dir.searchFile(srch).getName());
+        System.out.println(srch.equals(dir.searchFile(srch).getName()));
+
+        assertTrue(srch.equals(dir.searchFile(srch).getName()));
+
+        srch = "temp.docx";
+
+        assertNull(dir.searchFile(srch));
+    }
+
+    @Test
+    public void deleteFileTest() {
+        dir.addFile("temp.xlsx");
+        dir.addFile("deleteMe.docx");
+        dir.addFile("Virus.txt");
+
+        dir.updateFiles();
+        List<File> f = dir.getFiles();
+        
+        // assertFalse(f.contains(o));
     }
 }

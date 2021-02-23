@@ -1,7 +1,6 @@
 package VKeys;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -66,8 +65,6 @@ public class Directory {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-
     }
 
     public void updateFiles() {
@@ -78,8 +75,14 @@ public class Directory {
         // deletes file from the current directory
     }
 
-    public void searchFile() {
+    public File searchFile(String name) {
         // searches through all of the directories in current directory and returns the
         // file if its found else returns FileNotFound
+        for (File file : files) {
+            if(file.getName().equals(name)) {
+                return file;
+            }
+        }
+        return null;
     }
 }
