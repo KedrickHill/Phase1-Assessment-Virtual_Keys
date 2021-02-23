@@ -40,6 +40,7 @@ public class Menu {
                 System.out.println("Enter a file to search:");
                 menu();
             default: // exit the application
+                System.out.println("Closing Application...");
                 break;
 
         }
