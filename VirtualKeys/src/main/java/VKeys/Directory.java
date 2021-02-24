@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Directory {
 
@@ -92,5 +93,9 @@ public class Directory {
             }
         }
         return null;
+    }
+
+    public List<String> showAllFiles() {
+        return files.stream().map(f -> f.getName()).collect(Collectors.toList());
     }
 }

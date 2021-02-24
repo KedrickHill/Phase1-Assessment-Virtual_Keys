@@ -18,8 +18,8 @@ public class VKeysTest {
     /**
      * Rigorous Testing
      */
-    Directory dir = new Directory(new File("C:/Users/Kedrick/HCL-Projects/Phase1-Assessment-Virtual_Keys/VirtualKeys/MockDir"));
-            // Directory dir = new Directory( new File("C:/Users/hill_/OneDrive/HCL-Projects/Phase1-Assessment-Virtual_Keys/VirtualKeys/MockDir")); // laptop pathing
+    // Directory dir = new Directory(new File("C:/Users/Kedrick/HCL-Projects/Phase1-Assessment-Virtual_Keys/VirtualKeys/MockDir")); // desktop path
+            Directory dir = new Directory( new File("C:/Users/hill_/OneDrive/HCL-Projects/Phase1-Assessment-Virtual_Keys/VirtualKeys/MockDir")); // laptop pathing
     List<File> correctFiles = Arrays.asList(new File(dir.getPath() + "/Info"), new File(dir.getPath() + "/LockedMe.com"),
             new File(dir.getPath() + "/Users"), new File(dir.getPath() + "/List.docx"),
             new File(dir.getPath() + "/READ.txt"), new File(dir.getPath() + "/Spreadsheet.xlsx"));
@@ -96,5 +96,21 @@ public class VKeysTest {
         assertFalse(f.contains(t1));
         assertFalse(f.contains(t2));
         assertFalse(f.contains(t3));
+    }
+
+    @Test
+    public void showAllFilesTest() {
+        System.out.println("SHOWING ALL FILES IN DIRECTORY...   ");
+
+        List<String> fileList = dir.showAllFiles();
+        System.out.println("retrieved:");
+        System.out.println(fileList);
+
+        List<String> cmp = Arrays.asList("Info", "LockedMe.com","Users","List.docx","READ.txt","Spreadsheet.xlsx");
+        Collections.sort(cmp);
+        System.out.println("Comparing list:");
+        System.out.println(cmp);
+
+        assertTrue(fileList.equals(cmp));
     }
 }
