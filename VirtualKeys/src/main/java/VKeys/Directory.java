@@ -89,9 +89,11 @@ public class Directory {
         // file if its found else returns FileNotFound
         for (File file : files) {
             if(file.getName().equals(name)) {
+                System.out.println("\nFile Found!\n");
                 return file;
             }
         }
+        System.out.println("\nCould not find the file\n");
         return null;
     }
 

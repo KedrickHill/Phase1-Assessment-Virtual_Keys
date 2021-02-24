@@ -9,7 +9,7 @@ public class Menu {
     final static String PATH = System.getProperty("user.dir") + "/MockDir";
 
     public static void menu() {
-        
+
         Scanner input = new Scanner(System.in);
         Directory dir = new Directory(new File(PATH));
         System.out.println(
@@ -19,35 +19,51 @@ public class Menu {
         int option = input.nextInt();
         switch (option) {
             case 1: // display current directory
-                System.out.println("Your Current Directory: " + dir.getDir());
+                System.out.println("\nYour Current Directory: " + dir.getDir() + "\n");
                 menu();
+                break;
 
             case 2: // show all files in directory
-                System.out.println(dir.showAllFiles() + "\n");
+                System.out.println("\nFiles in Directory: " + dir.showAllFiles() + "\n");
                 menu();
+                break;
 
             case 3: // add a file to the directory
-                System.out.println("Enter the files name and type:");
-                dir.addFile(input.nextLine());
+                System.out.println("\nEnter the files name and type:");
+                input.nextLine();
+                String add = input.nextLine();
+                dir.addFile(add);
+                System.out.println("\nFile has been created\n");
                 menu();
+                break;
 
             case 4: // delete a file from directory
-                System.out.println("Enter a file to be deleted:");
-                dir.deleteFile(input.nextLine());
+                System.out.println("\nEnter a file to be deleted:");
+                input.nextLine();
+                String del = input.nextLine();
+                dir.deleteFile(del);
+                System.out.println("\nFile has been deleted\n");
                 menu();
+                break;
 
             case 5: // delete all files from directory?
+                System.out.println("\nOh! You were thinking about it! To bad.\n");
+                menu();
                 break;
 
             case 6: // search the directory for a file
-                System.out.println("Enter a file to search:");
+                System.out.println("\nEnter a file to search:");
+                input.nextLine();
+                String srch = input.nextLine();
+                dir.searchFile(srch);
                 menu();
-                
+                break;
+
             case 7: //exit the application
-                System.out.println("Closing Application...");
+                System.out.println("\nClosing Application...\n");
                 break;
             default: // asks for
-                System.out.println("Invalid choice! Closing Application...");
+                System.out.println("\nInvalid choice! Closing Application...\n");
                 break;
 
         }
