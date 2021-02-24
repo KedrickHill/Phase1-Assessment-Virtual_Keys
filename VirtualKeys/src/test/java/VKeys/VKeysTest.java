@@ -18,8 +18,7 @@ public class VKeysTest {
     /**
      * Rigorous Testing
      */
-    // Directory dir = new Directory(new File("C:/Users/Kedrick/HCL-Projects/Phase1-Assessment-Virtual_Keys/VirtualKeys/MockDir")); // desktop path
-            Directory dir = new Directory( new File("C:/Users/hill_/OneDrive/HCL-Projects/Phase1-Assessment-Virtual_Keys/VirtualKeys/MockDir")); // laptop pathing
+    Directory dir = new Directory(new File(System.getProperty("user.dir") + "/MockDir"));
     List<File> correctFiles = Arrays.asList(new File(dir.getPath() + "/Info"), new File(dir.getPath() + "/LockedMe.com"),
             new File(dir.getPath() + "/Users"), new File(dir.getPath() + "/List.docx"),
             new File(dir.getPath() + "/READ.txt"), new File(dir.getPath() + "/Spreadsheet.xlsx"));

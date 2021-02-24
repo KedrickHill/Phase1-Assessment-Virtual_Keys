@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Menu {
 
     int index = 0;
-    final static String PATH = "C:/Users/hill_/OneDrive/HCL-Projects/Phase1-Assessment-Virtual_Keys/VirtualKeys/MockDir";
+    final static String PATH = System.getProperty("user.dir") + "/MockDir";
 
     public static void menu() {
         // TODO: ask user for input on what they would like to do in the app
@@ -25,7 +25,7 @@ public class Menu {
                 menu();
 
             case 2: // show all files in directory
-                System.out.println(dir.getFiles() + "\n");
+                System.out.println(dir.showAllFiles() + "\n");
                 menu();
 
             case 3: // add a file to the directory
