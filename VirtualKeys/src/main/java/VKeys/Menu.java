@@ -9,9 +9,7 @@ public class Menu {
     final static String PATH = System.getProperty("user.dir") + "/MockDir";
 
     public static void menu() {
-        // TODO: ask user for input on what they would like to do in the app
-        // TODO: using a switch to change the case would work here (Check with previous
-        // assignemnt: Bug Fixes)
+        
         Scanner input = new Scanner(System.in);
         Directory dir = new Directory(new File(PATH));
         System.out.println(
