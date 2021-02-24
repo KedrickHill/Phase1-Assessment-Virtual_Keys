@@ -63,7 +63,7 @@ Company Lockers Pvt. Ltd. hired you as a Full Stack Developer. They aim to digit
 
   - [x] Search a user specified file from the main directory
 
-    - [ ] You can add the case sensitivity on the file name to retrieve the correct file
+    - [x] You can add the case sensitivity on the file name to retrieve the correct file
 
     - [x] Display the result upon successful operation
 
