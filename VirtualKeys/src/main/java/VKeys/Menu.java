@@ -42,7 +42,7 @@ public class Menu {
     public static void subMenu() {
         Scanner input = new Scanner(System.in);
         System.out.println("\n***** FILE MANAGEMENT *****");
-        System.out.println("1- Add a File\n2- Delete a File\n3- Delete All Files\n4- Search for a File\n5- Return to Main Menu\n");
+        System.out.println("1- Add a File\n2- Delete a File\n3- Search for a File\n4- Return to Main Menu\n");
         System.out.println("Enter a Choice:");
         int option = input.nextInt();
         switch(option) {
@@ -60,16 +60,10 @@ public class Menu {
                 input.nextLine();
                 String del = input.nextLine();
                 dir.deleteFile(del);
-                System.out.println("\nFile has been deleted\n");
                 subMenu();
                 break;
 
-            case 3: // delete all files in the directory
-                System.out.println("\nOh! You were thinking about it! To bad.\n");
-                subMenu();
-                break;
-
-            case 4: // search for a file in the directory
+            case 3: // search for a file in the directory
                 System.out.println("\nEnter a file to search:");
                 input.nextLine();
                 String srch = input.nextLine();
@@ -77,7 +71,7 @@ public class Menu {
                 subMenu();
                 break;
 
-            case 5: // return to the main menu
+            case 4: // return to the main menu
                 System.out.println("\nReturning to Main Menu...\n");
                 menu();
                 break;

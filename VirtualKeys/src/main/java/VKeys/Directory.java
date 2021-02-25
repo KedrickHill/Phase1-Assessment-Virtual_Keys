@@ -74,14 +74,24 @@ public class Directory {
 
     public void deleteFile(String name) {
         // deletes file from the current directory
-
-        for (File file : files) {
-            if(file.getName().equals(name)) {
-                file.delete();
-                break;
+        if (showAllFiles().contains(name)) {
+            for (File file : files) {
+                if(file.getName().equals(name) && !file.isDirectory()) {
+                    System.out.println("\nDELETING FILE...");
+                    file.delete();
+                    System.out.println("\n" + file.getName() + " has been deleted.");
+                    updateFiles();
+                    break;
+                }
+                else if (file.getName().equals(name) && file.isDirectory()) {
+                    System.out.println("\nFILE IS A DIRECTORY. CANNOT DELETE.");
+                    break;
+                }
             }
         }
-        updateFiles();
+        else {
+            System.out.println("\nFILE NOT FOUND. CANNOT DELETE.");
+        }
     }
 
     public File searchFile(String name) {
