@@ -100,4 +100,11 @@ public class Directory {
     public List<String> showAllFiles() {
         return files.stream().map(f -> f.getName()).collect(Collectors.toList());
     }
+
+    public boolean isValidFile() {       
+
+        // check regex: should be *.[a-z]+ what ever name then contain some sort of type
+        // if it applies to this then its valid else not valid
+        return true;
+    }
 }
