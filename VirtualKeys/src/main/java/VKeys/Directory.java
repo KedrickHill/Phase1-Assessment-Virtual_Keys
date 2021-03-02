@@ -129,15 +129,9 @@ public class Directory {
 
 
     public boolean isValidFile(String name) {       
-
-        // takes only some majorly used file types...can expand later if needed
         Pattern p = Pattern.compile("(\\w+\\.(txt|jpeg|xlsx|docx|png|csv|dat|db|sql|tar|xml|gif|ppt|pptx))", Pattern.CASE_INSENSITIVE);
-        // check regex: should be *.[a-z]+ what ever name then contain some sort of type
-        // if it applies to this then its valid else not valid
         Matcher m = p.matcher(name);
-
         if (!m.matches()) return false;
-
         return true;
     }
 

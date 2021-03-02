@@ -64,12 +64,7 @@ public class Menu {
                 System.out.println("\nEnter a file to be deleted:");
                 input.nextLine();
                 String del = input.nextLine();
-                if(dir.isValidFile(del)) {
-                    dir.deleteFile(del);
-                }
-                else {
-                    System.out.println("\nFile Name is Invalid. \n\nReturning to File Management...\n");
-                }
+                dir.deleteFile(del);
                 subMenu();
                 break;
 
@@ -77,12 +72,7 @@ public class Menu {
                 System.out.println("\nEnter a file to search:");
                 input.nextLine();
                 String srch = input.nextLine();
-                if(dir.isValidFile(srch)) {
-                    dir.searchFile(srch);
-                }
-                else {
-                    System.out.println("\nFile Name is Invalid. \n\nReturning to File Management...\n");
-                }
+                dir.searchFile(srch);
                 subMenu();
                 break;
 
