@@ -43,7 +43,7 @@ public class VKeysTest {
         System.out.println("Recieved:");
         System.out.println(f);
         assertTrue(f.contains(temp));
-        
+                
     }
 
 
@@ -113,4 +113,27 @@ public class VKeysTest {
 
         assertTrue(fileList.equals(cmp));
     }
+
+    @Test
+    public void isValidFileTest() {
+        System.out.println("CHECK VALIDITY OF A FILE...");
+
+        File HelloWorld = new File(dir.getPath(), "temp");
+        System.out.println(HelloWorld.getName());
+        assertFalse(dir.isValidFile(HelloWorld.getName()));
+        HelloWorld = new File(dir.getPath(), "temp.txt");
+        System.out.println(HelloWorld.getName());
+        assertTrue(dir.isValidFile(HelloWorld.getName()));
+        HelloWorld = new File(dir.getPath(), "temp.txttxt");
+        System.out.println(HelloWorld.getName());
+        System.out.println(dir.isValidFile(HelloWorld.getName()));
+        assertFalse(dir.isValidFile(HelloWorld.getName()));    
+        HelloWorld = new File(dir.getPath(), "temp.txt.txt");
+        System.out.println(HelloWorld.getName());
+        System.out.println(dir.isValidFile(HelloWorld.getName()));
+        assertFalse(dir.isValidFile(HelloWorld.getName()));
+        HelloWorld = new File(dir.getPath(), "temp.jpeg");
+        System.out.println(HelloWorld.getName());
+        assertTrue(dir.isValidFile(HelloWorld.getName()));
+        }
 }
