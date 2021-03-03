@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Menu {
 
     // Working directory
-    static Directory dir = new Directory(new File(System.getProperty("user.dir") + "/MockDir"));
+        static Directory dir = new Directory(new File(System.getProperty("user.dir") + "/MockDir"));
 
     public static void menu() {
 
